@@ -1,6 +1,6 @@
 # arduino self banlancing robot
 
-old project of a robot that can balance itself using pid control. Here's an example of what it looks like: https://www.youtube.com/watch?v=aUbBUd-hBLI
+old project of a robot that can balance itself using pid control. Here's an example of what these robots looks like: https://www.youtube.com/watch?v=aUbBUd-hBLI
 
 -   test_WheelsAndSensor --> Moves the weels forward and backward. Tests the sensor (btw IMU needs to be calibrated for good PVM control)
 -   balance.ino, balance2.ino --> PD control
