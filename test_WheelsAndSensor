@@ -1,0 +1,62 @@
+#define IN1 8
+#define IN2 3
+#define IN4 10
+#define IN3 9
+#define EN1 5
+#define EN2 6
+
+float current_angle;
+
+
+void setup()
+{
+   Serial.begin(9600);
+  pinMode(A0, INPUT);
+ 
+  pinMode(EN1 , OUTPUT);
+  pinMode(EN2 , OUTPUT);
+  pinMode(IN1 , OUTPUT);
+  pinMode(IN2 , OUTPUT);
+  pinMode(IN4 , OUTPUT);
+  pinMode(IN3 , OUTPUT);
+
+
+}
+
+void loop()
+{
+  sensor();
+  forward(1000);
+  backward(1000);
+}
+
+void sensor()
+{
+  current_angle = analogRead(A0);
+  Serial.println(current_angle);
+
+  analogWrite(EN1, 255);
+  analogWrite(EN2, 255);
+}
+void forward(int wait)
+{
+  Serial.println();
+  Serial.println("Moving forward");
+  digitalWrite(IN1 , HIGH);
+  digitalWrite(IN2 , LOW);
+  digitalWrite(IN4 , HIGH);
+  digitalWrite(IN3 , LOW);
+  delay(wait);
+}
+
+
+void backward(int wait)
+{
+  Serial.println();
+  Serial.println("Moving backward");
+  digitalWrite(IN1 , LOW);
+  digitalWrite(IN2 , HIGH);
+  digitalWrite(IN4 , LOW);
+  digitalWrite(IN3 , HIGH);
+  delay(wait);
+}
